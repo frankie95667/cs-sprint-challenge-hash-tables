@@ -4,8 +4,12 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     if len(weights) < 2:
         return None
-    sums = {}
+
+    hashed_weights = {}
+
     for i in range(len(weights)):
-        for j in range(len(weights)):
+        if limit - weights[i] in hashed_weights:
+            return (i, hashed_weights[limit - weights[i]])
+        hashed_weights[weights[i]] = i
 
     return None
