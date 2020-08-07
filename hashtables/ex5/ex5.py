@@ -6,8 +6,15 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    result = []
+    hashtable = {}
+    for i in range(len(queries)):
+        hashtable[queries[i]] = True
+    
+    for file in files:
+        split_file = file.split("/")
+        if split_file[-1] in hashtable:
+            result.append(file)
     return result
 
 
