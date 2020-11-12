@@ -2,7 +2,12 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    result = []
+    hashtable = {}
+    for i in range(len(a)):
+        if (a[i] < 0 and  abs(a[i]) in hashtable) or (a[i] > 0 and -a[i] in hashtable):
+            result.append(abs(a[i]))
+        hashtable[a[i]] = True
 
     return result
 
